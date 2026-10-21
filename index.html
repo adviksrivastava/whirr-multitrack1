@@ -1,0 +1,145 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tape Deck — Multitrack Studio</title>
+    <link rel="stylesheet" href="styles.css">
+    
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@1,500;1,600&family=DM+Mono:wght@400;500&display=swap" rel="stylesheet">
+
+</head>
+<body>
+    <main class="studio">
+
+        <header class="topbar">
+            <div class="brand">
+                <div class="brand-icon">W</div>
+                <div>
+                    <h1>WHIRR</h1>
+                    <p>MULTITRACK STUDIO</p>
+                </div>
+            </div>
+
+            <div class="session">
+                <span class="status-light"></span>
+                <span>INPUT READY</span>
+            </div>
+
+            <div class="session-name">
+                SESSION 001 <span> / </span> UNTITLED MIX
+            </div>
+        </header>
+
+        <section class="hardware">
+            <div class="transport">
+                <div class="transport-label">TRANSPORT</div>
+
+                <div class="transport-buttons">
+                    <button id="stopBtn" class="transport-btn stop-btn" title="Stop">■</button>
+                    <button id="playBtn" class="transport-btn play-btn" title="Play">▶</button>
+                    <button id="recordBtn" class="transport-btn record-btn" title="Record">●</button>
+                </div>
+
+                <div class="time-display" id="timeDisplay">00:00:00</div>
+                <div class="display-caption">HOURS : MINUTES : SECONDS</div>
+            </div>
+
+            <div class="hardware-divider"></div>
+
+            <div class="meters-section">
+                <div class="transport-label">MASTER OUTPUT</div>
+                <div class="meters">
+                    <div class="meter-unit">
+                        <span>L</span>
+                        <div class="meter"><div class="meter-fill" id="meterL"></div></div>
+                    </div>
+                    <div class="meter-unit">
+                        <span>R</span>
+                        <div class="meter"><div class="meter-fill" id="meterR"></div></div>
+                    </div>
+                </div>
+                <div class="meter-scale">-24 &nbsp; -12 &nbsp; -6 &nbsp; 0 dB</div>
+            </div>
+
+            <div class="hardware-divider"></div>
+
+            <div class="input-section">
+                <label for="inputDevice" class="transport-label">INPUT SOURCE</label>
+                <select id="inputDevice">
+                    <option value="">Default microphone</option>
+                </select>
+                <p class="small-note">AUDIO INPUT</p>
+
+<div class="metronome-controls">
+    <label class="metronome-toggle">
+        <input type="checkbox" id="metronomeEnabled" checked>
+        METRONOME
+    </label>
+
+    <label for="bpmInput" class="bpm-label">BPM</label>
+    <input
+        type="number"
+        id="bpmInput"
+        min="40"
+        max="240"
+        value="100"
+    >
+</div>
+<div class="measure-settings">
+    <label for="measureCount">MEASURES</label>
+    <input
+        type="number"
+        id="measureCount"
+        min="1"
+        max="64"
+        value="4"
+    >
+    <span>4 BEATS / MEASURE</span>
+</div>
+
+            </div>
+        </section>
+
+        <section class="timeline-section">
+            <div class="section-heading">
+                <div>
+                    <span class="section-kicker">THE MIXING ROOM</span>
+                    <h2>Multitrack Editor</h2>
+                </div>
+                <button id="addTrackBtn" class="add-track-btn">＋ ADD TRACK</button>
+            </div>
+
+            <div class="timeline">
+                <div class="track-header">
+                    <div class="track-header-label">TRACK / CONTROLS</div>
+                    <div class="ruler">
+                        <span>00:00</span>
+                        <span>00:05</span>
+                        <span>00:10</span>
+                        <span>00:15</span>
+                        <span>00:20</span>
+                        <span>00:25</span>
+                    </div>
+                </div>
+
+                <div id="tracksContainer"></div>
+            </div>
+
+            <div class="bottom-bar">
+                <span><span class="status-light"></span> SYSTEM STANDBY</span>
+                <span id="trackCount">04 TRACKS</span>
+                <span>44.1 kHz &nbsp; / &nbsp; STEREO</span>
+            </div>
+        </section>
+
+        <footer>
+            <span>WHIRR STUDIO <span class="footer-version">V.01</span></span>
+        </footer>
+
+    </main>
+
+    <script src="index.js"></script>
+</body>
+</html>
